@@ -3,13 +3,8 @@ import java.util.List;
 
 public class Caracteres extends Token{
 
-    private int linha;
-    private int[] coluna;
-    public Caracteres(int t,String s,int linha) {
-        super(t);
-        this.linha=linha;
-        coluna= checar(s);
-        imprimir();
+    public Caracteres() {
+        super(8);
     }
     public int[] checar(String s){
         List <Integer> retornar=new ArrayList<Integer>();
@@ -33,12 +28,4 @@ public class Caracteres extends Token{
         return r;
     }
 
-    public void imprimir(){
-        System.out.print("Linha: "+ linha+"\nColunas:");
-        for(int i=0;i<coluna.length;i++){
-            System.out.print(coluna[i]+" ");
-        }
-        System.out.println("\n");
-    }
-    
 }

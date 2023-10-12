@@ -3,13 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConstanteReal extends Token{
-    private int linha;
-    private int[] coluna;
-    public ConstanteReal(int t,String s,int linha) {
-        super(t);
-        this.linha=linha;
-        coluna= checar(s);
-        imprimir();
+    public ConstanteReal() {
+        super(6);
     } 
 
     public int[] checar(String s){
@@ -93,14 +88,6 @@ public class ConstanteReal extends Token{
             return true;
         }
         return false;
-    }
-
-    public void imprimir(){
-        System.out.print("Linha: "+ linha+"\nColunas:");
-        for(int i=0;i<coluna.length;i++){
-            System.out.print(coluna[i]+" ");
-        }
-        System.out.println("\n");
     }
     
 }

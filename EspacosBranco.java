@@ -2,16 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EspacosBranco extends Token{
-    private int linha;
-    private int[] coluna;
     private char[] tabulacao;
 
-    public EspacosBranco(int t,String s,int linha){
-        super(t);
+    public EspacosBranco(){
+        super(11);
         tabulacao="/*".toCharArray();
-        this.linha=linha;
-        coluna= checar(s);
-        imprimir();
+        
     }
 
     public int[] checar(String s){
@@ -45,11 +41,4 @@ public class EspacosBranco extends Token{
         return r;
     }
 
-    public void imprimir(){
-        System.out.print("Linha: "+ linha+"\nColunas:");
-        for(int i=0;i<coluna.length;i++){
-            System.out.print(coluna[i]+" ");
-        }
-        System.out.println("\n");
-    }
 }

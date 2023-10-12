@@ -2,11 +2,9 @@ import java.util.List;
 import java.util.ArrayList;
 public class PalavraReservadas extends Token{
     private String[] palavrasReservadas;
-    private int linha;
-    private int[] coluna;
 
-    public PalavraReservadas(int t,String s,int linha){
-        super(t);
+    public PalavraReservadas(){
+        super(1);
         palavrasReservadas=new String[7];
         palavrasReservadas[0]="if";
         palavrasReservadas[1]="else";
@@ -15,9 +13,6 @@ public class PalavraReservadas extends Token{
         palavrasReservadas[4]="int";
         palavrasReservadas[5]="char";
         palavrasReservadas[6]="void";
-        this.linha=linha;
-        coluna=checar(s);
-        imprimir();
     }
     public int[] checar(String s){
         List <Integer> retornar=new ArrayList<Integer>();
@@ -38,13 +33,6 @@ public class PalavraReservadas extends Token{
             r[j]=retornar.get(j);
         }
         return r;
-    }
-    public void imprimir(){
-        System.out.print("Linha: "+ linha+"\nColunas:");
-        for(int i=0;i<coluna.length;i++){
-            System.out.print(coluna[i]+" ");
-        }
-        System.out.println("\n");
     }
     
 }

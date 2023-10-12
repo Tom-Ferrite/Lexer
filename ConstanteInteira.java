@@ -2,13 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConstanteInteira extends Token{
-    private int linha;
-    private int[] coluna;
-    public ConstanteInteira(int t,String s,int linha) {
-        super(t);
-        this.linha=linha;
-        coluna= checar(s);
-        imprimir();
+    public ConstanteInteira() {
+        super(3);
     } 
     public int[] checar(String s){
         List <Integer> retornar=new ArrayList<Integer>();
@@ -47,12 +42,5 @@ public class ConstanteInteira extends Token{
             }
         }
         return true;
-    }
-    public void imprimir(){
-        System.out.print("Linha: "+ linha+"\nColunas:");
-        for(int i=0;i<coluna.length;i++){
-            System.out.print(coluna[i]+" ");
-        }
-        System.out.println("\n");
     }
 }

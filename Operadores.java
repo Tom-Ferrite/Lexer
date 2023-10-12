@@ -2,20 +2,14 @@ import java.util.List;
 import java.util.ArrayList;
 public class Operadores extends Token{
     private char[] operadores;
-    private int linha;
-    private int[] coluna;
 
-    public Operadores(int t,String s,int linha){
-        super(t);
+    public Operadores(){
+        super(9);
         operadores=new char[8];
         //operadores[0]="->";
         //operadores[1]="++";
         //operadores[2]="--";
         operadores="&*+-~!,>".toCharArray();
-
-        this.linha=linha;
-        coluna=checar(s);
-        imprimir();
     }
     public int[] checar(String s){
         List <Integer> retornar=new ArrayList<Integer>();
@@ -48,13 +42,6 @@ public class Operadores extends Token{
             r[j]=retornar.get(j);
         }
         return r;
-    }
-    public void imprimir(){
-        System.out.print("Linha: "+ linha+"\nColunas:");
-        for(int i=0;i<coluna.length;i++){
-            System.out.print(coluna[i]+" ");
-        }
-        System.out.println("\n");
     }
     
 }

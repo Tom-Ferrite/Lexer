@@ -3,13 +3,8 @@ import java.util.List;
 
 public class CadeiaCaracteres extends Token{
 
-    private int linha;
-    private int[] coluna;
-    public CadeiaCaracteres(int t,String s,int linha) {
-        super(t);
-        this.linha=linha;
-        coluna= checar(s);
-        imprimir();
+    public CadeiaCaracteres() {
+        super(7);
     }
     public int[] checar(String s){
         List <Integer> retornar=new ArrayList<Integer>();
@@ -29,14 +24,6 @@ public class CadeiaCaracteres extends Token{
             r[j]=retornar.get(j);
         }
         return r;
-    }
-
-    public void imprimir(){
-        System.out.print("Linha: "+ linha+"\nColunas:");
-        for(int i=0;i<coluna.length;i++){
-            System.out.print(coluna[i]+" ");
-        }
-        System.out.println("\n");
     }
     
 }

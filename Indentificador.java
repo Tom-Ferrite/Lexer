@@ -2,14 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Indentificador extends Token{
-    private int linha;
-    private int[] coluna;
-    public Indentificador(int t,String s,int linha){
-        super(t);
-
-        this.linha=linha;
-        coluna= checar(s);
-        imprimir();
+    public Indentificador(){
+        super(2);
     }
     public int[] checar(String s){
         List <Integer> retornar=new ArrayList<Integer>();
@@ -39,12 +33,5 @@ public class Indentificador extends Token{
             r[j]=retornar.get(j);
         }
         return r;
-    }
-    public void imprimir(){
-        System.out.print("Linha: "+ linha+"\nColunas:");
-        for(int i=0;i<coluna.length;i++){
-            System.out.print(coluna[i]+" ");
-        }
-        System.out.println("\n");
     }
 }

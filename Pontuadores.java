@@ -6,12 +6,10 @@ public class Pontuadores extends Token{
     private int[] coluna;
 
     public Pontuadores(int t,String s,int linha){
-        super(t);
+        super(10);
         pontuadores="[](),".toCharArray();
-        this.linha=linha;
-        coluna=checar(s);
-        imprimir();
     }
+    
     public int[] checar(String s){
         List <Integer> retornar=new ArrayList<Integer>();
         char[] palavras=s.toCharArray();
@@ -29,13 +27,6 @@ public class Pontuadores extends Token{
             r[j]=retornar.get(j);
         }
         return r;
-    }
-    public void imprimir(){
-        System.out.print("Linha: "+ linha+"\nColunas:");
-        for(int i=0;i<coluna.length;i++){
-            System.out.print(coluna[i]+" ");
-        }
-        System.out.println("\n");
     }
     
 }

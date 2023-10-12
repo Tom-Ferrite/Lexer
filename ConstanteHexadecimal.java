@@ -2,14 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConstanteHexadecimal extends Token{
-
-    private int linha;
-    private int[] coluna;
-    public ConstanteHexadecimal(int t,String s,int linha) {
-        super(t);
-        this.linha=linha;
-        coluna= checar(s);
-        imprimir();
+    public ConstanteHexadecimal() {
+        super(4);
     }
     public int[] checar(String s){
         List <Integer> retornar=new ArrayList<Integer>();
@@ -44,12 +38,5 @@ public class ConstanteHexadecimal extends Token{
             }
         }
         return true;
-    }
-    public void imprimir(){
-        System.out.print("Linha: "+ linha+"\nColunas:");
-        for(int i=0;i<coluna.length;i++){
-            System.out.print(coluna[i]+" ");
-        }
-        System.out.println("\n");
     }
 }
